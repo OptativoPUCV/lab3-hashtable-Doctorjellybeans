@@ -52,15 +52,14 @@ void insertMap(HashMap * map, char * key, void * value) {
       int j = (i + indice) % map->capacity;
       if (map->buckets[j] == NULL){
         map->buckets[j] = dato;
-        map->size += 1;
       }
     }
     
   } else {
     Pair* dato = createPair(key, value);
     map->buckets[indice] = dato;
-    map->size += 1;
   }
+  map->size += 1;
 
 }
 
