@@ -144,3 +144,20 @@ Wed 06 Sep 2023 06:57:26 PM UTC:
  tests:  5|4
 total_score: 30/70
 19d4563
+Wed 06 Sep 2023 07:23:05 PM UTC: 
+ hashmap.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:97:3: error: expected ‘,’ or ‘;’ before ‘while’
+   97 |   while (i < map->capacity){
+      |   ^~~~~
+hashmap.c:96:7: error: unused variable ‘i’ [-Werror=unused-variable]
+   96 |   int i = 0
+      |       ^
+hashmap.c:95:7: error: unused variable ‘indice’ [-Werror=unused-variable]
+   95 |   int indice = hash(key, map->capacity);
+      |       ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+5b5f25b

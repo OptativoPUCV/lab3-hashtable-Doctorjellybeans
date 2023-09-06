@@ -40,7 +40,7 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-  if (map == NULL){
+  if (map == NULL || key == NULL){
     return;
   }
   int indice = hash(key, map->capacity);
@@ -88,9 +88,22 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
-
-
+  if (map == NULL || key == NULL){
     return NULL;
+  }
+
+  int indice = hash(key, map->capacity);
+  int i = 0
+  while (i < map->capacity){
+    if (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL && strcmp(map->buckets[indice]->key,key) == 0){
+      map->current = indice;
+      return map->current
+    }
+    indice = (indice + 1) & map->capacity;
+    i++;
+  }
+
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
