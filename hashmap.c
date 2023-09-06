@@ -43,26 +43,18 @@ void insertMap(HashMap * map, char * key, void * value) {
   if (map == NULL){
     return;
   }
-  printf("llave = %s\n",key);
-  //printf("%s",map->buckets[j]->key);
-  
   int indice = hash(key, map->capacity);
-  if (map->buckets[indice] == NULL){
-    
-    Pair* dato = createPair(key, value);
-    for (int i = 0; i < map->capacity; i++){
-      int j = (i + indice) % map->capacity;
-      if (map->buckets[j] == NULL || map->buckets[j]->key == NULL){
-        map->buckets[j] = dato;
-      }
-    }
-  } else {
-    Pair* dato = createPair(key, value);
-    map->buckets[indice] = dato;
-  }
-  map->size += 1;
 
+  while (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL){
+    if (strcmp(key, map->buckets[indice]->key) == 0) {
+      return;
+    }
+    indice = (indice + 1) % map->capacity;
+  }
+  map->buckets[indice] = createPair(key, value);
+  map->size++;
 }
+
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
