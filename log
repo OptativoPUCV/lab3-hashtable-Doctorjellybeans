@@ -300,3 +300,8 @@ hashmap.c:73:10: error: unused variable ‘new_buquets’ [-Werror=unused-variab
 cc1: all warnings being treated as errors
 Compilation failed
 3cdd0cb
+Wed 06 Sep 2023 09:35:16 PM UTC: 
+ hashmap.c | 24 ++++++++++++++++--------
+ 1 file changed, 16 insertions(+), 8 deletions(-)
+ tests:  0|0
+7166ee1

@@ -64,27 +64,35 @@ void enlarge(HashMap * map) {
     return;
   }
 
-  Pair** old_buquets = (Pair**)malloc(map->capacity * sizeof(Pair*));  
+  Pair** old_buckets = (Pair**)malloc(map->capacity * sizeof(Pair*));  
   for (int i = 0; i < map->capacity; i++){
-    old_buquets[i] = map->buckets[i];
+    old_buckets[i] = map->buckets[i];
   }
 
   long nuevaCapacidad = map->capacity * 2;
-  Pair** new_buquets = (Pair**)malloc(nuevaCapacidad * sizeof(Pair*));
+  Pair** new_buckets = (Pair**)malloc(nuevaCapacidad * sizeof(Pair*));
+  if (new_buckets == NULL) {
+    free(old_buckets); 
+    return; 
+  }
   
   map->size = 0;
 
   for (int i = 0; i < nuevaCapacidad; i++){
-    if (old_buquets[i] != NULL && old_buquets[i]->key != NULL){
-      long indice = hash(old_buquets[i]->key, nuevaCapacidad);
-      insertMap(map, old_buquets[indice]->key, old_buquets[indice]->value);
+    new_buckets[i] = NULL;
+  }
+
+  for (int i = 0; i < map->capacity; i++){
+    if (old_buckets[i] != NULL && old_buckets[i]->key != NULL){
+      long indice = hash(old_buckets[i]->key, nuevaCapacidad);
+      insertMap(map, old_buckets[indice]->key, old_buckets[indice]->value);
     }
   }
 
   for (int i = 0; i < map->capacity; i++){
-    free(old_buquets[i]);
+    free(old_buckets[i]);
   }
-  free(old_buquets);
+  free(old_buckets);
 
   map->capacity = nuevaCapacidad;
 }
