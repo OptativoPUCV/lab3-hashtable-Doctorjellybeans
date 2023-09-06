@@ -289,3 +289,14 @@ hashmap.c:69:16: error: ‘old_buquets’ may be used uninitialized [-Werror=may
 cc1: all warnings being treated as errors
 Compilation failed
 8f70f1e
+Wed 06 Sep 2023 09:27:34 PM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:73:10: error: unused variable ‘new_buquets’ [-Werror=unused-variable]
+   73 |   Pair** new_buquets = (Pair**)malloc(nuevaCapacidad * sizeof(Pair*));
+      |          ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3cdd0cb
