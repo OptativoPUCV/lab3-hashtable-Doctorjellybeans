@@ -117,11 +117,28 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-
+  if (map == NULL){
     return NULL;
+  }
+
+  int indice = 0;
+  
+  while (map->buckets[indice] == NULL){
+    indice++;
+  }
+  
+  map->current = indice;
+  return map->buckets[indice];
 }
 
 Pair * nextMap(HashMap * map) {
-
+  if (map == NULL){
     return NULL;
+  }
+  
+  int indice = map->current;
+  map->current = indice;
+  
+  return map->buckets[indice];
+  return NULL;
 }
