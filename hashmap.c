@@ -43,6 +43,8 @@ void insertMap(HashMap * map, char * key, void * value) {
   if (map == NULL){
     return;
   }
+  printf("%s",key);
+  //printf("%s",map->buckets[j]->key);
   
   int indice = hash(key, map->capacity);
   if (map->buckets[indice] == NULL){
@@ -50,7 +52,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     Pair* dato = createPair(key, value);
     for (int i = 0; i < map->capacity; i++){
       int j = (i + indice) % map->capacity;
-      if (map->buckets[j] == NULL && strcmp(key, map->buckets[j]->key) != 0){
+      if (map->buckets[j] == NULL){
         map->buckets[j] = dato;
       }
     }
