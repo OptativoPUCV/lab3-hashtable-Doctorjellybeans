@@ -137,6 +137,9 @@ Pair * nextMap(HashMap * map) {
   }
   
   int indice = map->current;
+  while (map->buckets[indice]->key == NULL){
+    indice++;
+  }
   map->current = indice;
   
   return map->buckets[indice];
