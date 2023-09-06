@@ -108,3 +108,21 @@ Wed 06 Sep 2023 06:38:04 PM UTC:
  tests:  2|5
 total_score: 10/70
 a65e3e8
+Wed 06 Sep 2023 06:46:51 PM UTC: 
+ hashmap.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c:62:3: error: expected identifier or ‘(’ before ‘}’ token
+   62 |   } else {
+      |   ^
+hashmap.c:62:5: error: expected identifier or ‘(’ before ‘else’
+   62 |   } else {
+      |     ^~~~
+hashmap.c:66:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+   66 |   map->size += 1;
+      |      ^~
+hashmap.c:68:1: error: expected identifier or ‘(’ before ‘}’ token
+   68 | }
+      | ^
+Compilation failed
+1cff8e3
