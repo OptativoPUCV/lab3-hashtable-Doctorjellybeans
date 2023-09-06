@@ -51,7 +51,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     for (int i = 0; i < map->capacity; i++){
       int j = (i + indice) % map->capacity;
       if (map->buckets[j] == NULL){
-        map->buckets = dato;
+        map->buckets[j] = dato;
       }
     }
     
