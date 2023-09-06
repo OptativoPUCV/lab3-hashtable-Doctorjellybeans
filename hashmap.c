@@ -93,11 +93,11 @@ Pair * searchMap(HashMap * map,  char * key) {
   }
 
   int indice = hash(key, map->capacity);
-  int i = 0
+  int i = 0;
   while (i < map->capacity){
     if (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL && strcmp(map->buckets[indice]->key,key) == 0){
       map->current = indice;
-      return map->current
+      return map->current;
     }
     indice = (indice + 1) & map->capacity;
     i++;

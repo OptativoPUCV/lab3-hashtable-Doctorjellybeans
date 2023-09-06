@@ -161,3 +161,14 @@ hashmap.c:95:7: error: unused variable ‘indice’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 5b5f25b
+Wed 06 Sep 2023 07:23:36 PM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:100:17: error: returning ‘long int’ from a function with return type ‘Pair *’ makes pointer from integer without a cast [-Werror=int-conversion]
+  100 |       return map->current;
+      |              ~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1a33f99
