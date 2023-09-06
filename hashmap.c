@@ -47,7 +47,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   //printf("%s",map->buckets[j]->key);
   
   int indice = hash(key, map->capacity);
-  if (map->buckets[indice] == NULL){
+  if (map->buckets[indice] != NULL){
     
     Pair* dato = createPair(key, value);
     for (int i = 0; i < map->capacity; i++){
