@@ -381,3 +381,17 @@ hashmap.c:81:12: error: unused variable ‘indice’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 0f6e4bf
+Wed 06 Sep 2023 09:48:55 PM UTC: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:82:12: error: unused variable ‘indice’ [-Werror=unused-variable]
+   82 |       long indice = hash(old_buckets[i]->key, nuevaCapacidad);
+      |            ^~~~~~
+hashmap.c:78:8: error: unused variable ‘indice’ [-Werror=unused-variable]
+   78 |   long indice;
+      |        ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+9380864
