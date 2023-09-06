@@ -35,3 +35,14 @@ Wed 06 Sep 2023 05:31:47 PM UTC:
  tests:  1|5
 total_score: 10/70
 c126e35
+Wed 06 Sep 2023 06:16:39 PM UTC: 
+ hashmap.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:54:22: error: assignment to ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Werror=incompatible-pointer-types]
+   54 |         map->buckets = dato;
+      |                      ^
+cc1: all warnings being treated as errors
+Compilation failed
+68684d1
