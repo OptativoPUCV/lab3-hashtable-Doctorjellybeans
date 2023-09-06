@@ -65,41 +65,27 @@ void enlarge(HashMap * map) {
   }
   
   Pair **old_buckets = map->buckets;
-
-  // Paso b: Duplicar el valor de la variable capacity
-  long new_capacity = map->capacity * 2;
-
-  // Paso c: Asignar un nuevo arreglo con la nueva capacidad
-  map->buckets = (Pair **)malloc(new_capacity * sizeof(Pair *));
-  if (map->buckets == NULL) {
-    // Manejo de error en caso de que no se pueda asignar memoria
-    return;
-  }
-
-  // Paso d: Inicializar size a 0
+  
+  long nuevaCapacidad = map->capacity * 2;
+  map->buckets = (Pair**)malloc(nuevaCapacidad * sizeof(Pair*));
+  
   map->size = 0;
 
-  // Inicializar todas las casillas del nuevo arreglo como nulas
-  for (long i = 0; i < new_capacity; i++) {
+  for (long i = 0; i < nuevaCapacidad; i++){
     map->buckets[i] = NULL;
   }
 
-  // Paso e: Insertar los elementos del arreglo antiguo en el mapa vacío
-  for (long i = 0; i < map->capacity; i++) {
-    if (old_buckets[i] != NULL && old_buckets[i]->key != NULL) {
-      // Calcular el nuevo índice con la nueva capacidad
-      long new_index = hash(old_buckets[i]->key, new_capacity);
-
-      // Insertar el elemento en la nueva posición
+  for (long i = 0; i < map->capacity; i++){
+    
+    if (old_buckets[i] != NULL && old_buckets[i]->key != NULL){
+      long indice = hash(old_buckets[i]->key, nuevaCapacidad);
       insertMap(map, old_buckets[i]->key, old_buckets[i]->value);
     }
+  
   }
 
-  // Liberar la memoria del antiguo arreglo de buckets
   free(old_buckets);
-
-  // Actualizar la capacidad del mapa
-  map->capacity = new_capacity;
+  map->capacity = nuevaCapacidad;
 }
 
 
