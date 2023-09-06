@@ -95,6 +95,7 @@ void enlarge(HashMap * map) {
   free(old_buckets);
 
   map->capacity = nuevaCapacidad;
+  free(new_buckets);
 }
 
 
