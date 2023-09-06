@@ -136,7 +136,7 @@ Pair * nextMap(HashMap * map) {
     return NULL;
   }
   
-  int indice = map->current;
+  int indice = map->current + 1;
   while (indice < map->capacity){
     if (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL){
       map->current = indice;
