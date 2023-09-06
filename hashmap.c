@@ -140,7 +140,7 @@ Pair * nextMap(HashMap * map) {
   while (indice < map->capacity){
     if (map->buckets[indice] != NULL && map->buckets[indice]->key != NULL){
       map->current = indice;
-      return map->current;
+      return map->buckets[indice];
     }
     indice++;
   }

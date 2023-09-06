@@ -243,3 +243,9 @@ hashmap.c:143:17: error: returning ‘long int’ from a function with return ty
 cc1: all warnings being treated as errors
 Compilation failed
 716fa04
+Wed 06 Sep 2023 08:26:43 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  16|1
+total_score: 60/70
+96ccc14
