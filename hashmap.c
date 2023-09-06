@@ -83,7 +83,17 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-  
+  if (map == NULL || key == NULL){
+    return;
+  }
+
+  Pair *parejaBorrada = searchMap(map, key);
+
+  if (parejaBorrada != NULL){
+    parejaBorrada->key = NULL;
+    map->current = hash(key,map->capacity);
+    map->size--;
+  }
 
 }
 
