@@ -70,7 +70,7 @@ void enlarge(HashMap * map) {
   }
 
   long nuevaCapacidad = map->capacity * 2;
-  Pair* new_buquets = (Pair*)malloc(nuevaCapacidad * sizeof(Pair));
+  Pair** new_buquets = (Pair**)malloc(nuevaCapacidad * sizeof(Pair*));
   
   map->size = 0;
 
