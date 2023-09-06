@@ -43,7 +43,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   if (map == NULL){
     return;
   }
-  printf("%s",key);
+  printf("llave = %s\n",key);
   //printf("%s",map->buckets[j]->key);
   
   int indice = hash(key, map->capacity);
