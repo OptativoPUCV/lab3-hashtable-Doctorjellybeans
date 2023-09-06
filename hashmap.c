@@ -137,11 +137,14 @@ Pair * nextMap(HashMap * map) {
   }
   
   int indice = map->current;
-  while (map->buckets[indice]->key == NULL){
+  while (indice < map->capacity && map->buckets[indice]->key == NULL){
     indice++;
   }
   map->current = indice;
-  
-  return map->buckets[indice];
-  return NULL;
+
+  if (indice < map->capacity){
+    return map->buckets[indice];
+  } else {
+    return NULL;
+  }
 }
