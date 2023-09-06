@@ -310,3 +310,14 @@ Wed 06 Sep 2023 09:36:14 PM UTC:
  1 file changed, 1 insertion(+)
  tests:  0|0
 f167b7c
+Wed 06 Sep 2023 09:37:05 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:87:12: error: unused variable ‘indice’ [-Werror=unused-variable]
+   87 |       long indice = hash(old_buckets[i]->key, nuevaCapacidad);
+      |            ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+edd6187
