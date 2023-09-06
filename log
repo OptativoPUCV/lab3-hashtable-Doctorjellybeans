@@ -18,3 +18,8 @@ hashmap.c:58:11: error: ‘*mapa.buckets’ may be used uninitialized [-Werror=m
 cc1: all warnings being treated as errors
 Compilation failed
 8bb4c45
+Wed 06 Sep 2023 05:24:34 PM UTC: 
+ hashmap.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+ tests:  0|0
+1e0843c
