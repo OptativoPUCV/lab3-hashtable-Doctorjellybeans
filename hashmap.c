@@ -55,10 +55,7 @@ void insertMap(HashMap * map, char * key, void * value) {
       if (map->buckets[j] == NULL || map->buckets[j]->key == NULL){
         map->buckets[j] = dato;
       }
-        }
-      }
     }
-    
   } else {
     Pair* dato = createPair(key, value);
     map->buckets[indice] = dato;
