@@ -121,7 +121,7 @@ Pair * firstMap(HashMap * map) {
     return NULL;
   }
 
-  int indice = 0;
+  int indice = 1;
   
   while (map->buckets[indice] == NULL || map->buckets[indice]->key == NULL){
     indice++;
