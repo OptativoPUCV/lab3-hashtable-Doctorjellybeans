@@ -326,3 +326,25 @@ Wed 06 Sep 2023 09:37:17 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 f50aabe
+Wed 06 Sep 2023 09:45:00 PM UTC: 
+ hashmap.c | 24 +++++++-----------------
+ 1 file changed, 7 insertions(+), 17 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:70:65: error: expected ‘)’ before ‘;’ token
+   70 |   map->buckets = (Pair**)malloc((nuevaCapacidad * sizeof(Pair*));
+      |                                ~                                ^
+      |                                                                 )
+hashmap.c:87:34: error: expected ‘;’ before ‘}’ token
+   87 |   map->capacity = nuevaCapacidad;
+      |                                  ^
+      |                                  ;
+   88 | 
+   89 | }
+      | ~                                 
+hashmap.c:67:10: error: unused variable ‘old_buckets’ [-Werror=unused-variable]
+   67 |   Pair **old_buckets = map->buckets;
+      |          ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+fb10ac3
