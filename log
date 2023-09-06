@@ -348,3 +348,14 @@ hashmap.c:67:10: error: unused variable ‘old_buckets’ [-Werror=unused-variab
 cc1: all warnings being treated as errors
 Compilation failed
 fb10ac3
+Wed 06 Sep 2023 09:46:30 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:81:12: error: unused variable ‘indice’ [-Werror=unused-variable]
+   81 |       long indice = hash(old_buckets[i]->key, nuevaCapacidad);
+      |            ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e572a1d
