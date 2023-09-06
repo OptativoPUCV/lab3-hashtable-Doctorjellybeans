@@ -52,6 +52,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     indice = (indice + 1) % map->capacity;
   }
   map->buckets[indice] = createPair(key, value);
+  map->current = indice;
   map->size++;
 }
 
