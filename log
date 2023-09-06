@@ -261,3 +261,17 @@ Wed 06 Sep 2023 08:27:07 PM UTC:
  tests:  16|1
 total_score: 60/70
 1b86716
+Wed 06 Sep 2023 09:21:18 PM UTC: 
+ hashmap.c | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:73:9: error: unused variable ‘new_buquets’ [-Werror=unused-variable]
+   73 |   Pair* new_buquets = (Pair*)malloc(nuevaCapacidad * sizeof(Pair));
+      |         ^~~~~~~~~~~
+hashmap.c:69:16: error: ‘old_buquets’ may be used uninitialized [-Werror=maybe-uninitialized]
+   69 |     old_buquets[i] = map->buckets[i];
+      |                ^
+cc1: all warnings being treated as errors
+Compilation failed
+8f0da1f
